@@ -1,0 +1,42 @@
+*{
+	padding: 0px;
+	margin:0px;
+}
+#form{
+	left: 40%;
+	top: 30%;
+	position: absolute;
+	border-radius: 20px;
+	background-color: #CCCC33;
+	padding: 10px;
+}
+.contact{
+	width: 650px;
+	margin: auto;
+}
+.nameWrap{
+	width: 150px;
+	display: inline-block;
+}
+.groupsWrap{
+	width: 159px;
+	margin-top: 5px;
+	margin-left: 0px;
+	display: inline-block;
+}
+.numWrap{
+	width: 120px;
+	margin-left: 0px;
+	display: inline-block;
+}
+.delEdit{
+	margin-left: 100px;
+	display: inline-block;
+}
+.item{
+	margin-top: 30px;
+	border-radius: 10px;
+	
+	background-color: #00CCFF;
+	padding: 0px 10px 0px 10px;
+}
