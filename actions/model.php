@@ -2,7 +2,7 @@
 class Contacts{
     private $host="localhost";
     private $user="root";
-    private $password="Index8i9";
+    private $password="";
     private $database="contacts";
 
     public $queryCont="SELECT contact.id_name, contact.name, contact.s_name, contact.m_name, number.telephone, (
