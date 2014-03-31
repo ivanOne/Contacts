@@ -1,5 +1,5 @@
 <?php
-include 'actions/model.php';
+include 'model.php';
 $result= new Contacts;
 ?>
 <!Doctype html>
@@ -17,9 +17,9 @@ $result= new Contacts;
     <div id="editcont">
     <?php
     echo "<button id='updatename'>Обновить ФИО</button>";
-    	$result->edit();
+    $result->edit();
     ?>
    	
-	</div>
+    </div>
     </body>
 </html>

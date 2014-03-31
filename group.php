@@ -1,5 +1,5 @@
 <?php
-	include 'actions/model.php';
+	include 'model.php';
 	$result= new Contacts;
 	$group=$result->getGroup();
 ?>

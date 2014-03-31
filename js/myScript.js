@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+	var link="actions/controller.php";
 	
 	$('#add').click(function() {
 		var a=$('#group').val().length;
@@ -7,7 +7,7 @@ $(document).ready(function() {
 			var group=$('#group').val();
 			$.ajax({
 				type:"get",
-				url:"actions/addContact.php?cmd=11&data="+group,
+				url:link+"?cmd=addGroup&data="+group,
 				datatype:"html",
 				success:function(response){
 					$('#groups').append(response);
@@ -27,7 +27,7 @@ $(document).ready(function() {
 		var buttonId=this.id;
 		$.ajax({
 			type:"get",
-			url:"/actions/addContact.php?cmd=12&id="+buttonId,
+			url:link+"?cmd=delGroup&id="+buttonId,
 			datatype:"html",
 			success:function(){
 			$("#c"+buttonId).fadeOut(200);	
@@ -45,7 +45,7 @@ $(document).ready(function() {
 		var numberId=this.id;
 		$.ajax({
 			type:"get",
-			url:"/actions/addContact.php?cmd=13&id="+numberId,
+			url:link+"?cmd=more&id="+numberId,
 			datatype:"html",
 			success:function(response){
 				$('#tel'+numberId).append(response);
@@ -63,7 +63,7 @@ $(document).ready(function() {
 		$("[telnum]").mask("9(999)999-99-99");
 		$.ajax({
 			type:'get',
-			url:'/actions/addContact.php?cmd=0',
+			url:link+'?cmd=addContact',
 			datatype:"html",
 			success:function(response){
 				$("#check").append(response);
@@ -103,7 +103,7 @@ $(document).ready(function() {
 		if ((a>=2)&&(b=11)) {
 			$.ajax({
 				type:'get',
-				url:'/actions/addContact.php?cmd=1&'+data,
+				url:link+'?cmd=recordContact&'+data,
 				datatype:'text',
 				success:function(response){
 					$('.contact').append(response);
@@ -124,7 +124,7 @@ $(document).ready(function() {
 		var buttonId=this.id;
 		$.ajax({
 			type:"get",
-			url:"/actions/addContact.php?cmd=2&id="+buttonId,
+			url:link+"?cmd=deleteContact&id="+buttonId,
 			datatype:"html",
 
 			success:function(){
@@ -147,7 +147,7 @@ $(document).ready(function() {
 		var data=$('input.query').serialize();
 		$.ajax({
 			type:"get",
-			url:"/actions/addContact.php?cmd=4&"+data,
+			url:link+"?cmd=editGroupList&"+data,
 			datatype:'html',
 
 			success:function(response){	
@@ -163,7 +163,7 @@ $(document).ready(function() {
 		var idGroup=this.id;
 		var idCont=$('.inf').attr('value');
 		$.ajax({
-			url: '/actions/addContact.php?cmd=5&id='+idGroup+'&idcon='+idCont,
+			url: link+'?cmd=addGroupList&id='+idGroup+'&idcon='+idCont,
 			type: 'GET',
 			dataType: 'html',
 
@@ -184,7 +184,7 @@ $(document).ready(function() {
 		var idCont=$('.inf').attr('value');
 		$.ajax({
 			type: 'get',
-			url:'/actions/addContact.php?cmd=6&id='+idGroup+'&idcon='+idCont,
+			url:link+'?cmd=delGroupList&id='+idGroup+'&idcon='+idCont,
 
 			success:function(){
 				$('.itemGroup#'+idGroup).empty();
@@ -221,7 +221,7 @@ $(document).ready(function() {
 		var data=$('input.mask').serialize();
 		$.ajax({
 			type:'get',
-			url:'/actions/addContact.php?cmd=7&'+data+'&idcont='+idCont,
+			url:link+'?cmd=addNumList&'+data+'&idcont='+idCont,
 			dataType:'html',
 			success:function(response){
 				$('.numberWrap').append(response);
@@ -241,7 +241,7 @@ $(document).ready(function() {
 		var str='#d'+id+'';
 		$.ajax({
 			type:'get',
-			url:'/actions/addContact.php?cmd=8&id='+id,
+			url:link+'?cmd=delNumList&id='+id,
 			dataType:'html',
 			success:function(response){
 				$(str).fadeOut(200);
@@ -259,7 +259,7 @@ $(document).ready(function() {
 		var tel=$(str).val();
 		$.ajax({
 			type:'get',
-			url:'/actions/addContact.php?cmd=9&id='+id+'&tel='+tel,
+			url:link+'?cmd=updateNum&id='+id+'&tel='+tel,
 			dataType:'html',
 			success:function(response){
 				alert('Готово!');
@@ -277,7 +277,7 @@ $(document).ready(function() {
 		var data=$('input.letter').serialize();
 		$.ajax({
 			type:'get',
-			url:'/actions/addContact.php?cmd=10&id='+idCont+'&'+data,
+			url:link+'?cmd=updateName&id='+idCont+'&'+data,
 			dataType:'html',
 			success:function(response){
 				alert('Готово!');
